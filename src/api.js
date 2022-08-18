@@ -1,9 +1,12 @@
 const express = require("express")
+const cors = require('cors')
 const serverless = require("serverless-http")
 const { collection, ObjectId } = require("../config/database")
 
 const app = express()
 const router = express.Router()
+
+app.use(cors())
 
 // needed for adding a document 
 const bodyParser = require('body-parser');
@@ -12,20 +15,8 @@ app.use(bodyParser.urlencoded({
 }));
 app.use(bodyParser.json());
 
-// router.get("/", (req, res) => {
-//     //res.send("User List")
-//     collection.find().toArray((err, result) => {
-//         if (err) throw err;
-//         res.json(result)
-//     })
-// })
-
-router.get("/", (req, res, next) => {
+router.get("/", (req, res) => {
     //res.send("User List")
-    //https://rest-api-express-mongodb.netlify.app/.netlify/functions/api/
-    res.header("Access-Control-Allow-Origin", "https://rest-api-express-mongodb.netlify.app/.netlify/functions/api/"); // update to match the domain you will make the request from
-    res.header("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept");
-    next();
     collection.find().toArray((err, result) => {
         if (err) throw err;
         res.json(result)

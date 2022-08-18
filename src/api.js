@@ -5,6 +5,13 @@ const { collection, ObjectId } = require("../config/database")
 const app = express()
 const router = express.Router()
 
+// needed for adding a document 
+const bodyParser = require('body-parser');
+app.use(bodyParser.urlencoded({
+    extended: true
+}));
+app.use(bodyParser.json());
+
 router.get("/", (req, res) => {
     //res.send("User List")
     collection.find().toArray((err, result) => {

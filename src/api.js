@@ -23,7 +23,7 @@ app.use(bodyParser.json());
 router.get("/", (req, res, next) => {
     //res.send("User List")
     //https://rest-api-express-mongodb.netlify.app/.netlify/functions/api/
-    res.header("Access-Control-Allow-Origin", "rest-api-express-mongodb.netlify.app"); // update to match the domain you will make the request from
+    res.header("Access-Control-Allow-Origin", "https://rest-api-express-mongodb.netlify.app/.netlify/functions/api/"); // update to match the domain you will make the request from
     res.header("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept");
     next();
     collection.find().toArray((err, result) => {

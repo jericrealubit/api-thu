@@ -5,7 +5,7 @@
 # GET
 https://rest-api-express-mongodb.netlify.app/.netlify/functions/api/
 
-#POST
+# POST
 https://rest-api-express-mongodb.netlify.app/.netlify/functions/api/
 PAYLOAD:
 {    
@@ -14,10 +14,10 @@ PAYLOAD:
     "imageUrl": "abc"
 }
 
-#GET:id
+# GET:id
 https://rest-api-express-mongodb.netlify.app/.netlify/functions/api/62f2e9c9d9bcc19cd5dbcc88
 
-#PUT:id
+# PUT:id
 https://rest-api-express-mongodb.netlify.app/.netlify/functions/api/62f2e9c9d9bcc19cd5dbcc88
 PAYLOAD:
 {    
@@ -26,5 +26,5 @@ PAYLOAD:
     "imageUrl": "abc"
 }
 
-#DELETE:id
+# DELETE:id
 https://rest-api-express-mongodb.netlify.app/.netlify/functions/api/62f2e9c9d9bcc19cd5dbcc88
